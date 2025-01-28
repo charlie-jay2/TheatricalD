@@ -3,7 +3,7 @@ package dev.imabad.theatrical.blocks.light;
 import dev.imabad.theatrical.TheatricalClient;
 import dev.imabad.theatrical.TheatricalScreen;
 import dev.imabad.theatrical.blockentities.BlockEntities;
-import dev.imabad.theatrical.blockentities.light.MovingLightBlockEntity;
+import dev.imabad.theatrical.blockentities.light.MovingLightR3XBlockEntity;
 import dev.imabad.theatrical.blocks.Blocks;
 import dev.imabad.theatrical.net.OpenScreen;
 import net.minecraft.core.BlockPos;
@@ -33,10 +33,10 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class MovingLightBlock extends BaseLightBlock{
+public class MovingLightR3XBlock extends BaseLightBlock{
 
 
-    public MovingLightBlock() {
+    public MovingLightR3XBlock() {
         super(Properties.of()
             .requiresCorrectToolForDrops()
             .strength(3, 3)
@@ -49,7 +49,7 @@ public class MovingLightBlock extends BaseLightBlock{
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new MovingLightBlockEntity(blockPos, blockState);
+        return new MovingLightR3XBlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class MovingLightBlock extends BaseLightBlock{
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return blockEntityType == BlockEntities.MOVING_LIGHT.get() ? MovingLightBlockEntity::tick : null;
+        return blockEntityType == BlockEntities.MOVING_LIGHT.get() ? MovingLightR3XBlockEntity::tick : null;
     }
 
     @Override
